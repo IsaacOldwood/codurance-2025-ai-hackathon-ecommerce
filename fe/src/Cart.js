@@ -35,6 +35,7 @@ function Cart() {
         <table className="cart-table">
           <thead>
             <tr>
+              <th>Image</th>
               <th>Item</th>
               <th>Price</th>
               <th>Quantity</th>
@@ -44,6 +45,13 @@ function Cart() {
           <tbody>
             {cartItems.map((item) => (
               <tr key={item.id}>
+                <td className="item-image-column">
+                  <img 
+                    src={`https://placehold.co/50`} 
+                    alt={item.name} 
+                    className="item-image"
+                  />
+                </td>
                 <td className="item-name">{item.name}</td>
                 <td>{item.price}</td>
                 <td>{item.quantity}</td>
@@ -54,6 +62,15 @@ function Cart() {
               </tr>
             ))}
           </tbody>
+          <tfoot>
+            <tr>
+              <td colSpan="2" className="total-label">Total</td>
+              <td className="total-price">
+                {`$${cartItems.reduce((total, item) => total + parseFloat(item.price.slice(1)) * item.quantity, 0).toFixed(2)}`}
+              </td>
+              <td></td>
+            </tr>
+          </tfoot>
         </table>
       )}
     </div>
