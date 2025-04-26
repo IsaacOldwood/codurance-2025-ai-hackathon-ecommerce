@@ -70,9 +70,7 @@ https://chatgpt.com/share/680cb4dd-78b0-8000-9039-0861c2b0e24c
 
 ## Local Setup steps
 
-`pip install -e .[dev]`
-
-## Running the FastAPI Application Locally
+## Running the Application Locally
 
 To run the FastAPI application locally, follow these steps:`
 
@@ -92,3 +90,36 @@ To run the FastAPI application locally, follow these steps:`
    FastAPI provides interactive API documentation. You can access it at:
    - Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
    - ReDoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
+## Local Development Instructions
+
+### Frontend
+1. Navigate to the `fe` directory:
+   ```bash
+   cd fe
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+### Backend
+1. Ensure you have Python installed.
+2. Install dependencies:
+   ```bash
+   pip install -e .[dev]
+   ```
+3. Run the FastAPI app:
+   ```bash
+   uvicorn src.app:app --reload
+   ```
+
+### Database
+1. Seed the database:
+   ```bash
+   python src/db_import.py
+   ```
