@@ -29,29 +29,33 @@ function Cart() {
   return (
     <div className="cart-container">
       <h1>Cart Page</h1>
-      <table className="cart-table">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cartItems.map((item) => (
-            <tr key={item.id}>
-              <td>{item.name}</td>
-              <td>{item.price}</td>
-              <td>{item.quantity}</td>
-              <td>
-                <button onClick={() => increaseQuantity(item.id)}>+</button>
-                <button onClick={() => decreaseQuantity(item.id)}>-</button>
-              </td>
+      {cartItems.length === 0 ? (
+        <p>Your cart is currently empty.</p>
+      ) : (
+        <table className="cart-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {cartItems.map((item) => (
+              <tr key={item.id}>
+                <td className="item-name">{item.name}</td>
+                <td>{item.price}</td>
+                <td>{item.quantity}</td>
+                <td>
+                  <button onClick={() => increaseQuantity(item.id)}>+</button>
+                  <button onClick={() => decreaseQuantity(item.id)}>-</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }
