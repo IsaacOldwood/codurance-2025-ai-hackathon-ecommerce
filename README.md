@@ -71,3 +71,24 @@ https://chatgpt.com/share/680cb4dd-78b0-8000-9039-0861c2b0e24c
 ## Local Setup steps
 
 `pip install -e .[dev]`
+
+## Running the FastAPI Application Locally
+
+To run the FastAPI application locally, follow these steps:`
+
+1. **Run the Application**:
+   Navigate to the `src` directory and start the FastAPI application using:
+   ```bash
+   uvicorn app:app --reload
+   ```
+
+1. **Access the Application**:
+   Open your browser and navigate to:
+   ```
+   http://127.0.0.1:8000
+   ```
+
+1. **API Documentation**:
+   FastAPI provides interactive API documentation. You can access it at:
+   - Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+   - ReDoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
