@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "styleden_api"
+version = "0"
+
+dependencies = ["fastapi", "uvicorn[standard]", "pandas"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-mock", "pytest-asyncio", "pytest-httpx", "ruff"]
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib"]
+
+[tool.ruff]
+# Assume Python 3.11
+target-version = "py311"
+# Set src directory for import order
+src = ["src"]
+
+[tool.ruff.lint]
+# Enable pycodestyle (`E`) & (`W`), Pyflakes (`F`), flake8-bandit (`S`), flake8-bugbear (`B`), flake8-annotations (`ANN`) and isort (`I`)
+select = ["E", "W", "F", "S", "B", "ANN", "I"]
+ignore = [
+    "ANN101", # Deprecated rule
+    "ANN204", # Ignore return types on "special" methods, like __init__, __new__, and __call__
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = [
+    "S101",   # asserts are allowed in tests
+    "ANN201", # No type return needed in tests
+    "ANN001", # No input type needed in tests
+]

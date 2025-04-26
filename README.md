@@ -60,3 +60,14 @@ They've suggested a public dataset from Kaggle to seed your product catalogue:
 - You do **not need to deploy** the application — running locally is perfectly fine.
 - **Code quality is important** to StyleDen.  
   Your solution should be **well-designed** and **written in a test-driven manner**.
+
+
+---
+
+## Design Doc from ChatGPT
+
+https://chatgpt.com/share/680cb4dd-78b0-8000-9039-0861c2b0e24c
+
+## Local Setup steps
+
+`pip install -e .[dev]`
